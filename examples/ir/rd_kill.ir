@@ -1,0 +1,6 @@
+# Sequential overwrite + an assigned call + a call without a result.
+1: x = 1
+2: x = -x
+3: x = call read(x)
+4: call log(x)
+5: return x

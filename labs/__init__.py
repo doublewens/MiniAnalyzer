@@ -1,0 +1,1 @@
+"""MiniAnalyzer student laboratory modules."""

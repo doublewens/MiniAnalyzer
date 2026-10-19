@@ -1,0 +1,73 @@
+[Step   1] Node 1: c = call input() (forward)
+  worklist before: [1, 2, 3, 4, 5, 6, 7, 8]
+  incoming from boundary: []
+  merge -> IN[1] = []
+  transfer -> OUT[1] = ['c@1']
+  old IN/OUT: [] / []
+  new IN/OUT: [] / ['c@1']
+  changed: yes; enqueued: []; worklist after: [2, 3, 4, 5, 6, 7, 8]
+
+[Step   2] Node 2: x = 0 (forward)
+  worklist before: [2, 3, 4, 5, 6, 7, 8]
+  incoming from node 1: ['c@1']
+  merge -> IN[2] = ['c@1']
+  transfer -> OUT[2] = ['c@1', 'x@2']
+  old IN/OUT: [] / []
+  new IN/OUT: ['c@1'] / ['c@1', 'x@2']
+  changed: yes; enqueued: []; worklist after: [3, 4, 5, 6, 7, 8]
+
+[Step   3] Node 3: if c > 0 goto 6 (forward)
+  worklist before: [3, 4, 5, 6, 7, 8]
+  incoming from node 2: ['c@1', 'x@2']
+  merge -> IN[3] = ['c@1', 'x@2']
+  transfer -> OUT[3] = ['c@1', 'x@2']
+  old IN/OUT: [] / []
+  new IN/OUT: ['c@1', 'x@2'] / ['c@1', 'x@2']
+  changed: yes; enqueued: []; worklist after: [4, 5, 6, 7, 8]
+
+[Step   4] Node 4: x = 1 (forward)
+  worklist before: [4, 5, 6, 7, 8]
+  incoming from node 3: ['c@1', 'x@2']
+  merge -> IN[4] = ['c@1', 'x@2']
+  transfer -> OUT[4] = ['c@1', 'x@4']
+  old IN/OUT: [] / []
+  new IN/OUT: ['c@1', 'x@2'] / ['c@1', 'x@4']
+  changed: yes; enqueued: []; worklist after: [5, 6, 7, 8]
+
+[Step   5] Node 5: goto 7 (forward)
+  worklist before: [5, 6, 7, 8]
+  incoming from node 4: ['c@1', 'x@4']
+  merge -> IN[5] = ['c@1', 'x@4']
+  transfer -> OUT[5] = ['c@1', 'x@4']
+  old IN/OUT: [] / []
+  new IN/OUT: ['c@1', 'x@4'] / ['c@1', 'x@4']
+  changed: yes; enqueued: []; worklist after: [6, 7, 8]
+
+[Step   6] Node 6: x = 2 (forward)
+  worklist before: [6, 7, 8]
+  incoming from node 3: ['c@1', 'x@2']
+  merge -> IN[6] = ['c@1', 'x@2']
+  transfer -> OUT[6] = ['c@1', 'x@6']
+  old IN/OUT: [] / []
+  new IN/OUT: ['c@1', 'x@2'] / ['c@1', 'x@6']
+  changed: yes; enqueued: []; worklist after: [7, 8]
+
+[Step   7] Node 7: y = x + 1 (forward)
+  worklist before: [7, 8]
+  incoming from node 5: ['c@1', 'x@4']
+  incoming from node 6: ['c@1', 'x@6']
+  merge -> IN[7] = ['c@1', 'x@4', 'x@6']
+  transfer -> OUT[7] = ['c@1', 'x@4', 'x@6', 'y@7']
+  old IN/OUT: [] / []
+  new IN/OUT: ['c@1', 'x@4', 'x@6'] / ['c@1', 'x@4', 'x@6', 'y@7']
+  changed: yes; enqueued: []; worklist after: [8]
+
+[Step   8] Node 8: return y (forward)
+  worklist before: [8]
+  incoming from node 7: ['c@1', 'x@4', 'x@6', 'y@7']
+  merge -> IN[8] = ['c@1', 'x@4', 'x@6', 'y@7']
+  transfer -> OUT[8] = ['c@1', 'x@4', 'x@6', 'y@7']
+  old IN/OUT: [] / []
+  new IN/OUT: ['c@1', 'x@4', 'x@6', 'y@7'] / ['c@1', 'x@4', 'x@6', 'y@7']
+  changed: yes; enqueued: []; worklist after: []
+

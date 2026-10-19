@@ -1,0 +1,76 @@
+{
+  "analysis": "reaching-definitions",
+  "direction": "forward",
+  "statistics": {
+    "iterations": 10,
+    "updates": 9
+  },
+  "nodes": [
+    {
+      "index": 1,
+      "in": [],
+      "out": [
+        "x@1"
+      ]
+    },
+    {
+      "index": 2,
+      "in": [
+        "x@1"
+      ],
+      "out": [
+        "x@1",
+        "y@2"
+      ]
+    },
+    {
+      "index": 3,
+      "in": [
+        "x@1",
+        "x@4",
+        "y@2"
+      ],
+      "out": [
+        "x@1",
+        "x@4",
+        "y@2"
+      ]
+    },
+    {
+      "index": 4,
+      "in": [
+        "x@1",
+        "x@4",
+        "y@2"
+      ],
+      "out": [
+        "x@4",
+        "y@2"
+      ]
+    },
+    {
+      "index": 5,
+      "in": [
+        "x@4",
+        "y@2"
+      ],
+      "out": [
+        "x@4",
+        "y@2"
+      ]
+    },
+    {
+      "index": 6,
+      "in": [
+        "x@1",
+        "x@4",
+        "y@2"
+      ],
+      "out": [
+        "x@1",
+        "x@4",
+        "y@2"
+      ]
+    }
+  ]
+}

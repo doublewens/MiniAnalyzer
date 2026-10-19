@@ -1,0 +1,101 @@
+[Step   1] Node 6: return x (backward)
+  worklist before: [6, 5, 4, 3, 2, 1]
+  incoming from boundary: []
+  merge -> OUT[6] = []
+  transfer -> IN[6] = ['x']
+  old IN/OUT: [] / []
+  new IN/OUT: ['x'] / []
+  changed: yes; enqueued: []; worklist after: [5, 4, 3, 2, 1]
+
+[Step   2] Node 5: goto 3 (backward)
+  worklist before: [5, 4, 3, 2, 1]
+  incoming from node 3: []
+  merge -> OUT[5] = []
+  transfer -> IN[5] = []
+  old IN/OUT: [] / []
+  new IN/OUT: [] / []
+  changed: no; enqueued: []; worklist after: [4, 3, 2, 1]
+
+[Step   3] Node 4: x = x + 1 (backward)
+  worklist before: [4, 3, 2, 1]
+  incoming from node 5: []
+  merge -> OUT[4] = []
+  transfer -> IN[4] = ['x']
+  old IN/OUT: [] / []
+  new IN/OUT: ['x'] / []
+  changed: yes; enqueued: []; worklist after: [3, 2, 1]
+
+[Step   4] Node 3: if x >= y goto 6 (backward)
+  worklist before: [3, 2, 1]
+  incoming from node 4: ['x']
+  incoming from node 6: ['x']
+  merge -> OUT[3] = ['x']
+  transfer -> IN[3] = ['x', 'y']
+  old IN/OUT: [] / []
+  new IN/OUT: ['x', 'y'] / ['x']
+  changed: yes; enqueued: [5]; worklist after: [2, 1, 5]
+
+[Step   5] Node 2: y = 10 (backward)
+  worklist before: [2, 1, 5]
+  incoming from node 3: ['x', 'y']
+  merge -> OUT[2] = ['x', 'y']
+  transfer -> IN[2] = ['x']
+  old IN/OUT: [] / []
+  new IN/OUT: ['x'] / ['x', 'y']
+  changed: yes; enqueued: []; worklist after: [1, 5]
+
+[Step   6] Node 1: x = 0 (backward)
+  worklist before: [1, 5]
+  incoming from node 2: ['x']
+  merge -> OUT[1] = ['x']
+  transfer -> IN[1] = []
+  old IN/OUT: [] / []
+  new IN/OUT: [] / ['x']
+  changed: yes; enqueued: []; worklist after: [5]
+
+[Step   7] Node 5: goto 3 (backward)
+  worklist before: [5]
+  incoming from node 3: ['x', 'y']
+  merge -> OUT[5] = ['x', 'y']
+  transfer -> IN[5] = ['x', 'y']
+  old IN/OUT: [] / []
+  new IN/OUT: ['x', 'y'] / ['x', 'y']
+  changed: yes; enqueued: [4]; worklist after: [4]
+
+[Step   8] Node 4: x = x + 1 (backward)
+  worklist before: [4]
+  incoming from node 5: ['x', 'y']
+  merge -> OUT[4] = ['x', 'y']
+  transfer -> IN[4] = ['x', 'y']
+  old IN/OUT: ['x'] / []
+  new IN/OUT: ['x', 'y'] / ['x', 'y']
+  changed: yes; enqueued: [3]; worklist after: [3]
+
+[Step   9] Node 3: if x >= y goto 6 (backward)
+  worklist before: [3]
+  incoming from node 4: ['x', 'y']
+  incoming from node 6: ['x']
+  merge -> OUT[3] = ['x', 'y']
+  transfer -> IN[3] = ['x', 'y']
+  old IN/OUT: ['x', 'y'] / ['x']
+  new IN/OUT: ['x', 'y'] / ['x', 'y']
+  changed: yes; enqueued: [2, 5]; worklist after: [2, 5]
+
+[Step  10] Node 2: y = 10 (backward)
+  worklist before: [2, 5]
+  incoming from node 3: ['x', 'y']
+  merge -> OUT[2] = ['x', 'y']
+  transfer -> IN[2] = ['x']
+  old IN/OUT: ['x'] / ['x', 'y']
+  new IN/OUT: ['x'] / ['x', 'y']
+  changed: no; enqueued: []; worklist after: [5]
+
+[Step  11] Node 5: goto 3 (backward)
+  worklist before: [5]
+  incoming from node 3: ['x', 'y']
+  merge -> OUT[5] = ['x', 'y']
+  transfer -> IN[5] = ['x', 'y']
+  old IN/OUT: ['x', 'y'] / ['x', 'y']
+  new IN/OUT: ['x', 'y'] / ['x', 'y']
+  changed: no; enqueued: []; worklist after: []
+

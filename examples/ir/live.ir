@@ -1,0 +1,8 @@
+1: x = 1
+2: y = 2
+3: z = x + y
+4: if z > 0 goto 7
+5: x = y
+6: goto 8
+7: y = z
+8: return y

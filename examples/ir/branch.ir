@@ -1,0 +1,6 @@
+1: x = 1
+2: if x > 0 goto 5
+3: y = 0
+4: goto 6
+5: y = x
+6: exit

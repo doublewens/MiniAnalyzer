@@ -1,0 +1,141 @@
+{
+  "analysis": "live",
+  "equivalent": true,
+  "differences": [],
+  "reference": {
+    "analysis": "live-variable",
+    "direction": "backward",
+    "statistics": {
+      "iterations": 11,
+      "updates": 8
+    },
+    "nodes": [
+      {
+        "index": 1,
+        "in": [],
+        "out": [
+          "x"
+        ]
+      },
+      {
+        "index": 2,
+        "in": [
+          "x"
+        ],
+        "out": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "index": 3,
+        "in": [
+          "x",
+          "y"
+        ],
+        "out": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "index": 4,
+        "in": [
+          "x",
+          "y"
+        ],
+        "out": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "index": 5,
+        "in": [
+          "x",
+          "y"
+        ],
+        "out": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "index": 6,
+        "in": [
+          "x"
+        ],
+        "out": []
+      }
+    ]
+  },
+  "student": {
+    "analysis": "live-variable",
+    "direction": "backward",
+    "statistics": {
+      "iterations": 11,
+      "updates": 8
+    },
+    "nodes": [
+      {
+        "index": 1,
+        "in": [],
+        "out": [
+          "x"
+        ]
+      },
+      {
+        "index": 2,
+        "in": [
+          "x"
+        ],
+        "out": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "index": 3,
+        "in": [
+          "x",
+          "y"
+        ],
+        "out": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "index": 4,
+        "in": [
+          "x",
+          "y"
+        ],
+        "out": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "index": 5,
+        "in": [
+          "x",
+          "y"
+        ],
+        "out": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "index": 6,
+        "in": [
+          "x"
+        ],
+        "out": []
+      }
+    ]
+  },
+  "comparison_scope": "final per-node IN/OUT facts and analysis direction",
+  "note": "Equal results on these examples do not prove an algorithm correct for all programs."
+}

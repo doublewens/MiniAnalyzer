@@ -1,0 +1,9 @@
+# Branch join: the old definition x@2 is overwritten on both branches.
+1: c = call input()
+2: x = 0
+3: if c > 0 goto 6
+4: x = 1
+5: goto 7
+6: x = 2
+7: y = x + 1
+8: return y
